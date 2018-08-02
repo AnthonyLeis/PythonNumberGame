@@ -1,10 +1,13 @@
-from appJar import gui
+import kivy
+kivy.require('1.10.1')
 
-app = gui()
-
-
-app.addLabel("welcome", "Welcome to the number game!")
-app.setLabelBg("welcome", "blue")
+from kivy.app import App
+from kivy.uix.label import Label
 
 
-app.go()
+class GuessingGame(App):
+    def build(self):
+        return Label(text="Welcome to the Guessing Game!")
+
+if __name__=='__main__':
+    GuessingGame().run()
